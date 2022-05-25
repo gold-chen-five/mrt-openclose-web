@@ -9,19 +9,20 @@ function VideoControl({area,setArea}) {
     setVideoStartorStop(status)
     clickFlag.current = true
   }
-  const fetchApi = () => {
-    axios.post(`http://18.181.110.2:7000/api/fetchServer`,{
-        area: area,
-        videoStartorStop: videoStartorStop
-    })
-      .then(res => res.data)
-      .then(data => {
-        console.log(data)
-      })
-
-  }
+  
 
   useEffect(() => {
+    const fetchApi = () => {
+        axios.post(`http://18.181.110.2:7000/api/fetchServer`,{
+            area: area,
+            videoStartorStop: videoStartorStop
+        })
+          .then(res => res.data)
+          .then(data => {
+            console.log(data)
+          })
+    
+    }
     if(clickFlag.current){
         fetchApi()
     }
