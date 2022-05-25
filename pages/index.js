@@ -24,7 +24,7 @@ export default function Home() {
         password
       })
       if(user.status === 200){
-        router.push('/dashboard/user')
+        router.push('/dashboard/User')
       }
     }catch(err){
       alert('帳密錯誤')
